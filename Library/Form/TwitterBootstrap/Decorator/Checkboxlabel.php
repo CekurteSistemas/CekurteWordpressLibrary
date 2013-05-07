@@ -1,8 +1,6 @@
 <?php
 
-namespace Cekurte\Library\Form\TwitterBootstrap\Decorator;
-
-class Checkboxlabel extends \Zend_Form_Decorator_HtmlTag
+class Form_TwitterBootstrap_Decorator_Checkboxlabel extends Zend_Form_Decorator_HtmlTag
 {
 	public function render($content)
 	{

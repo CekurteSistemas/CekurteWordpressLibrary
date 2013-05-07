@@ -1,8 +1,6 @@
 <?php
 
-namespace Cekurte\Library\Form\TwitterBootstrap\Decorator;
-
-class Errors extends \Zend_Form_Decorator_Errors
+class Form_TwitterBootstrap_Decorator_Errors extends Zend_Form_Decorator_Errors
 {
 	public function render($content)
 	{

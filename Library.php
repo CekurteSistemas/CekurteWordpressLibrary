@@ -31,6 +31,9 @@ class Library {
      * Inicializa a biblioteca de classes registrando um autoloader
      */
     public function init() {
+    	
+    	set_include_path( get_include_path() . PATH_SEPARATOR . realpath(dirname(__FILE__) . '/Library') );
+    	
     	require realpath(dirname(__FILE__) . '/autoloader.php');
     }
 }

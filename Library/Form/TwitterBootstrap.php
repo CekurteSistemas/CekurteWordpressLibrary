@@ -11,7 +11,7 @@ abstract class TwitterBootstrap extends \Zend_Form
 		$viewRenderer->initView();
 		
 		// Let's load our own decorators
-		$this->addPrefixPath("Twitter_Form_Decorator", "Twitter/Form/Decorator/", "decorator");
+		$this->addPrefixPath("Form_TwitterBootstrap_Decorator", "Form/TwitterBootstrap/Decorator/", "decorator");
 
 		// Get rid of all the pre-defined decorators
 		$this->clearDecorators();
