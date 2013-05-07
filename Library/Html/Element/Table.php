@@ -197,15 +197,15 @@ class Table extends Element {
 		$template 	= $this->getTemplate();
 		
 		$html 		= $template['tbody_open'];
-		$total 		= count($this->getData());
-		$data 		= $this->getData();
+		$data		= $this->getData();
 		$columns 	= array();
 	
 		foreach( $data as $name => $value ) {
 			$columns[] = $name;
+			$total	   = count($value);
 		}
 		
-		for( $i = 0; $i <= $total; $i++ ) {
+		for( $i = 0; $i < $total; $i++ ) {
 			
 			$html .= $template['row_start'];
 			

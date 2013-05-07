@@ -1,11 +1,9 @@
 <?php
 
-use Cekurte\Library;
-
 /**
  * Cekurte\Library Tests
  */
-class LibraryTest extends \WP_UnitTestCase {
+class LibraryTest extends WP_UnitTestCase {
     
     /**
      * @var \Cekurte\Library uma instância do plugin
@@ -14,9 +12,12 @@ class LibraryTest extends \WP_UnitTestCase {
 
     public function setUp() {
         parent::setUp();
-       	$this->plugin = new Library();
+       	$this->plugin = $GLOBALS['cekurte-library'];
     }
     
+    /**
+     * Verifica se o plugin é uma instância de \Cekurte\Library
+     */
     public function testInstanceOfCekurteLibrary() {
     	$this->assertInstanceOf('\\Cekurte\\Library', $this->plugin);
     }

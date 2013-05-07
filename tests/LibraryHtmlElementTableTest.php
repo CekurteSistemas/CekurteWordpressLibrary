@@ -17,6 +17,9 @@ class LibraryHtmlElementTableTest extends \WP_UnitTestCase {
        	$this->instance = new Table();
     }
     
+    /**
+     * Testa se a propriedade "instance" é uma instância de \Cekurte\Library\Html\Element\Table
+     */
     public function testInstanceOfCekurteLibraryHtmlElementTable() {
     	$this->assertInstanceOf('\\Cekurte\\Library\\Html\\Element\\Table', $this->instance);
     }

@@ -15,20 +15,26 @@ Author URI: 	http://sistemas.cekurte.com
 
 if( !class_exists('\\Cekurte\\Library') ) :
 
-require realpath(dirname(__FILE__) . '/autoloader.php');
-
+/**
+ * Carrega a biblioteca de classes da Cekurte Sistemas
+ */
 class Library {
     
     /**
-     * Library
+     * Adiciona um hook na inicialização do Wordpress
      */
     public function __construct() {
-    	add_action('init', array($this, 'init'));
+    	add_action('init', array($this, 'init'), 5);
     }
     
+    /**
+     * Inicializa a biblioteca de classes registrando um autoloader
+     */
     public function init() {
-    	
+    	require realpath(dirname(__FILE__) . '/autoloader.php');
     }
 }
+
+$GLOBALS['cekurte-library'] = new \Cekurte\Library();
 
 endif;
