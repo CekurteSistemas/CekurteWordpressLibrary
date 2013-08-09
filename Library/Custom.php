@@ -146,4 +146,40 @@ class Custom {
     	
     	return register_taxonomy( 'ck_cat_' . $slug, $post_type, $args );
     }
+    
+    /**
+     * Adiciona novos supports para um ou mais post types
+     * 
+     * @param array $addSupport
+     * 
+     * @return \Cekurte\Library\Custom
+     */
+    public function addPostTypeSupports(array $addSupport) {
+    	if (!empty($addSupport)) {
+    		foreach ($addSupport as $postType => $supports) {
+    			foreach ($supports as $support) {
+    				add_post_type_support($postType, $support);
+    			}
+    		}
+    	}
+    	return $this;
+    }
+    
+    /**
+     * Remove supports para um ou mais post types
+     *
+     * @param array $removeSupport
+     *
+     * @return \Cekurte\Library\Custom
+     */
+    public function removePostTypeSupports(array $removeSupport) {
+    	if (!empty($removeSupport)) {
+    		foreach ($removeSupport as $postType => $supports) {
+    			foreach ($supports as $support) {
+    				remove_post_type_support($postType, $support);
+    			}
+    		}
+    	}
+    	return $this;
+    }
 } 
